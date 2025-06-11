@@ -1,9 +1,19 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+let user = require("../models/UserModel.js");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+// 获取用户信息
+router.get("/userInfo", async (req, res, next) => {
+  user
+    .find()
+    .exec()
+    .then((data) => {
+      res.json({
+        code: "0000",
+        msg: "success",
+        data: data,
+      });
+    });
 });
 
 module.exports = router;

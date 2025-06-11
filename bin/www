@@ -10,7 +10,7 @@ db(
   () => {
     console.log("连接成功~~");
     var app = require("../app");
-    var debug = require("debug")("aimer:server");
+    var debug = require("debug")("green:server");
     var http = require("http");
 
     /**
