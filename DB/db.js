@@ -15,12 +15,10 @@ module.exports = function (success, fail) {
   mongo.connect(`mongodb://${DBHOST}:${DBPORT}/${DBNAME}`);
 
   mongo.connection.once("open", () => {
-    console.log("连接成功~~");
     success();
   });
 
   mongo.connection.on("error", () => {
-    console.log("连接失败~~");
     fail();
   });
 };
